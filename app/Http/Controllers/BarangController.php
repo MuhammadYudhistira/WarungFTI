@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Barang;
+use Illuminate\Http\Request;
+
+class BarangController extends Controller
+{
+    public function index(){
+
+        $barang = Barang::all();
+
+        return view('barang.list', compact('barang'));
+    }
+
+    public function create(){
+
+        return view('barang.create');
+
+    }
+
+    public function store(Request $request){
+        $validated = $request->validate([
+            'gambar' => 'image|required',
+            'nama' => 'required',
+            'harga' => 'required|min:1',
+            'stok' => 'required|min:1'
+        ]);
+
+        $validated['gambar'] = $request->file('gambar')->store('gambar-barang');
+        Barang::create($validated);
+
+        return redirect('/barang/list');
+    }
+
+    public function destroy(Barang $barang){
+
+        $barang ->delete();
+        return redirect()->back();
+    }
+
+    public function edit(Barang $barang){
+
+        return view('barang.edit', compact('barang'));
+    }
+
+    public function update(Request $request, Barang $barang){
+
+        $validated = $request->validate([
+            'gambar' => 'image|required',
+            'nama' => 'required',
+            'harga' => 'required|min:1',
+            'stok' => 'required|min:1'
+        ]);
+
+        $validated['gambar'] = $request->file('gambar')->store('gambar-barang');
+        Barang::update($validated);
+
+        return redirect('/barang/list');
+    }
+}
