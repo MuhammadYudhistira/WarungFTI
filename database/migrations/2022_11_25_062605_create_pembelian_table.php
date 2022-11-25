@@ -13,16 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pembelian', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('no_hp')->unique();
-            $table->string('role');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
+            $table->unsignedBigInteger("barang_id");
+            $table->integer('jumlah');
+            $table->integer('total');
+            $table->dateTime('tanggal');
             $table->timestamps();
+
+            $table->foreign('barang_id')->references('id')->on('barang')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pembelian');
     }
 };
