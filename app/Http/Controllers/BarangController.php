@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BarangController extends Controller
 {
@@ -48,14 +49,19 @@ class BarangController extends Controller
     public function update(Request $request, Barang $barang){
 
         $validated = $request->validate([
-            'gambar' => 'image|required',
+            'gambar' => 'image',
             'nama' => 'required',
             'harga' => 'required|min:1',
-            'stok' => 'required|min:1'
+            // 'stok' => 'required|min:1'
         ]);
 
-        $validated['gambar'] = $request->file('gambar')->store('gambar-barang');
-        Barang::update($validated);
+        if($request->file('gambar')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validated['gambar'] = $request->file('gambar')->store('gambar-barang');
+        }
+        $barang->update($validated);
 
         return redirect('/barang/list');
     }

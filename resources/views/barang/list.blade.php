@@ -2,9 +2,10 @@
 @section('title', 'List Barang')
 @section("content")
 <h2 class="text-center mb-3">List data produk</h2>
+
 <a href="/barang/create" class="btn btn-success mb-3">Tambah produk</a>
 
-<table class="table">
+<table class="table  table-bordered border-dark table-hover">
     <thead>
         <tr class="bg-secondary">
             <th scope="col" class="text-center">No.</th>
@@ -19,7 +20,7 @@
         @foreach ($barang as $b)
         <tr>
             <td class="text-center">{{ $loop->iteration }}.</td>
-            <td><img src="{{asset('storage/'. $b->gambar)}}" alt=""></td>
+            <td><img src="{{asset('storage/'. $b->gambar)}}" alt="" class="mb-3 col-sm-5 d-block" ></td>
             <td>{{ $b->nama }}</td>
             <td>{{ $b->harga }}</td>
             <td>{{ $b->stok }}</td>

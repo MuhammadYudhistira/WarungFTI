@@ -18,14 +18,15 @@
         <input type="number" class="form-control" id="harga" placeholder="Masukkan harga produk" name="harga" value="{{$barang ->harga}}" min="1">
     </div>
 
-    <div class="mb-3">
+    {{-- <div class="mb-3">
         <label for="jumlah" class="form-label">Stok : </label>
 
         <input type="number" class="form-control" id="stok" placeholder="Masukkan harga produk" name="stok" value="{{$barang ->stok}}" min="1">
-    </div>
+    </div> --}}
 
     <div class="mb-3">
         <label for="formFile" class="form-label">Gambar</label>
+        <input type="text" name="oldImage" id="" value="{{$barang->gambar}}" hidden>
         @if($barang->gambar)
         <img src="{{asset('storage/'. $barang->gambar)}}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
         @endif
