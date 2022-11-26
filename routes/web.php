@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +28,13 @@ Route::get('/barang/create', [BarangController::class, 'create']);
 Route::get('/barang/{barang}', [BarangController::class, 'destroy']);
 Route::put('/barang/{barang}', [BarangController::class, 'update']);
 Route::get('/barang/{barang}/edit', [BarangController::class, 'edit']);
+
+Route::get('/user/list',[UserController::class, 'index']);
+
+Route::get('/penjualan/list', [PenjualanController::class, 'index']);
+Route::get('/penjualan/create', [PenjualanController::class, 'create']);
+Route::post('/penjualan', [PenjualanController::class, 'store']);
+
+Route::get('/pembelian/list', [PembelianController::class, 'index']);
+Route::get('/pembelian/create', [PembelianController::class, 'create']);
+Route::post('/pembelian', [PembelianController::class, 'store']);

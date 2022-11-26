@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Users extends Model
 {
     use HasFactory;
-    protected $table = "user";
+    protected $table = "users";
     protected $guarded = ["id"];
 
     public function Penjualan(){

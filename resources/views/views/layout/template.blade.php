@@ -21,12 +21,12 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav me-auto">
                     <a class="nav-link text-white" aria-current="page" href="/barang/list">Barang</a>
-                    <a class="nav-link text-white" href="/user/list">User</a>
+                    <a class="nav-link text-white" href="/User/list">User</a>
                     <li class='nav-item dropdown'>
                         <a class="nav-link dropdown text-white" href="#" data-bs-toggle="dropdown"> Transaksi </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/penjualan/list">Transaksi Penjualan</a></li>
-                                <li><a class="dropdown-item" href="/pembelian/list">Transaksi Pembelian</a></li>
+                                <li><a class="dropdown-item" href="#">Transaksi Penjualan</a></li>
+                                <li><a class="dropdown-item" href="#">Transaksi Pembelian</a></li>
                             </ul>
 
                     </li>
