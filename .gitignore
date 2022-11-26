@@ -1,7 +1,6 @@
 /node_modules
 /public/build
 /public/hot
-/storage/*.key
 .env.backup
 .env.production
 .phpunit.result.cache
