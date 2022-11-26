@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\BarangController;
-use App\Http\Controllers\PenjualanController;
-use App\Http\Controllers\PembelianController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', [Authcontroller::class, 'login'])->name("Login");
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::post('/logout', [AuthController::class, 'Logout']);
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'Logout']);
 
 Route::middleware("auth")->group(function(){
     Route::get('/barang/list', [BarangController::class, 'index']);
@@ -39,3 +41,6 @@ Route::middleware("auth")->group(function(){
     Route::get('/pembelian/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
 });
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);

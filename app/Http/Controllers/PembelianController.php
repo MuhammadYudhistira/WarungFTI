@@ -31,7 +31,7 @@ class PembelianController extends Controller
         ]);
 
         $validated["tanggal"] = date("Y-m-d h:i:s");
-        Pembeluan::create($validated);
+        Pembelian::create($validated);
 
         $barang = Barang::find($validated["barang_id"]);
         $barang->update([
