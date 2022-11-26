@@ -9,10 +9,10 @@
     <thead>
         <tr class="bg-secondary">
             <th scope="col" class="text-center">No.</th>
-            <th scope="col" class="text-center">Gambar</th>
-            <th scope="col" class="text-center">Nama</th>
-            <th scope="col" class="text-center">Harga</th>
-            <th scope="col" class="text-center">Stok</th>
+            <th scope="col">Gambar Barang</th>
+            <th scope="col">Nama Barang</th>
+            <th scope="col">Harga Barang</th>
+            <th scope="col">Stok Barang</th>
             <th scope="col" class="text-center">Aksi</th>
         </tr>
     </thead>
@@ -20,10 +20,10 @@
         @foreach ($barang as $b)
         <tr>
             <td class="text-center">{{ $loop->iteration }}.</td>
-            <td class="text-center"><img src="{{asset('storage/'. $b->gambar)}}" alt="" class="mb-3 col-sm-5 d-block" ></td>
-            <td class="text-center">{{ $b->nama }}</td>
-            <td class="text-center">{{ $b->harga }}</td>
-            <td class="text-center">{{ $b->stok }}</td>
+            <td><img src="{{asset('storage/'. $b->gambar)}}" alt="" class="mb-3 col-sm-5 d-block" ></td>
+            <td>{{ $b->nama }}</td>
+            <td>{{ $b->harga }}</td>
+            <td>{{ $b->stok }}</td>
             <td class="text-center">
 
                 <a href="/barang/{{ $b->id }}/edit" class="btn btn-warning">
