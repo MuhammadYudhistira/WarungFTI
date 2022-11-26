@@ -28,7 +28,7 @@
               <div class="form-floating mt-3">
                 <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="no_hp">
                 <label for="no_hp">No. HP</label>
-                @error('name')
+                @error('no_hp')
                   <div class="invalid-feedback">
                     {{  $message  }}
                   </div>

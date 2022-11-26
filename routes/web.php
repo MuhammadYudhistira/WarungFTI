@@ -21,6 +21,8 @@ use App\Http\Controllers\PenjualanController;
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'Logout']);
 
 Route::middleware("auth")->group(function(){
@@ -41,6 +43,3 @@ Route::middleware("auth")->group(function(){
     Route::get('/pembelian/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
 });
-
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
