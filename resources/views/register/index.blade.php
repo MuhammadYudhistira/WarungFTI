@@ -3,20 +3,36 @@
 @section("content")
 <div class="row justify-content-center">
     <div class="col-md-5">
-        <main class="form-register">
+        <main class="form-registration">
             <h1 class="h3 mb-3 fw-normal text-center">Registrasi akun</h1>
             <form action="/register" method="post">
+                @csrf
               <div class="form-floating">
-                <input type="text" name="nama" class="form-control" id="nama" placeholder="nama">
-                <label for="nama ">Nama</label>
+                <input type="text" name="name" class="form-control" id="nama" placeholder="nama">
+                <label for="name ">Nama</label>
+                @error('name')
+                  <div class="invalid-feedback">
+                    {{  $message  }}
+                  </div>
+                @enderror
               </div>
               <div class="form-floating mt-3">
                 <input type="text" name="username" class="form-control" id="username" placeholder="Username">
                 <label for="username">Username</label>
+                @error('username')
+                  <div class="invalid-feedback">
+                    {{  $message  }}
+                  </div>
+                @enderror
               </div>
               <div class="form-floating mt-3">
                 <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="no_hp">
                 <label for="no_hp">No. HP</label>
+                @error('name')
+                  <div class="invalid-feedback">
+                    {{  $message  }}
+                  </div>
+                @enderror
               </div>
               <div class="form-floating mt-3">
                 <input type="password" name=password" class="form-control" id="password" placeholder="Password">

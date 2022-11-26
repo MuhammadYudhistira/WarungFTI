@@ -14,7 +14,12 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function store(){
-        return request()->all();
+    public function store(Request $request)
+{
+    $validated = $request->validate([
+        'name' => 'required|max:255',
+        'username' => 'required|max:255|min:3|unique:users',
+        'no_hp' => 'required|max:13|unique:users']
+    );
     }
 }
