@@ -28,7 +28,6 @@ class BarangController extends Controller
             'harga' => 'required|min:1',
             'stok' => 'required|min:1'
         ]);
-        // dd($validated['gambar'] = $request->file('gambar')->store('gambar-barang'));
 
         dd($validated);
         $validated['gambar'] = $request->file('gambar')->store('gambar-barang');
