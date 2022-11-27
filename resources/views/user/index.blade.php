@@ -19,12 +19,15 @@
         @foreach ($users as $u)
         <tr>
             <td class="text-center">{{ $loop->iteration }}.</td>
-            <td><img src="{{asset('storage/'. $b->gambar)}}" alt="" class="mb-3 col-sm-5 d-block" ></td>
-            <td>{{ $u->id_user }}</td>
+            <td>{{ $u->id }}</td>
             <td>{{ $u->nama }}</td>
             <td>{{ $u->no_hp }}</td>
             <td>{{ $u->username }}</td>
-            <td>{{ $u->role }}</td>
+            @if($u->role == '1')
+                <td>admin</td>
+            @else
+            <td>Customer</td>
+            @endif
         </tr>
         @endforeach
     </tbody>

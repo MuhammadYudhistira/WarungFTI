@@ -7,6 +7,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\KeluarMasukController;
 
 /*
 |--------------------------------------------------------------------------
