@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     public function index(){
-        return view("register.index");
+        return view('register.index');
     }
 
     public function store(Request $request){
@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'username' => 'required',
             'no_hp' => 'required',
             'password' => 'required',
-            'role' => 'required'
+            // 'role' => 'required'
         ]);
 
         // dd($validated);

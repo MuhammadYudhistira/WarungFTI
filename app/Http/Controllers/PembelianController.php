@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pembelian;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Barang;
 use Illuminate\Http\Request;
 
@@ -17,7 +17,7 @@ class PembelianController extends Controller
 
     public function create()
     {
-        $user = Users::all();
+        $user = User::all();
         $barang =  Barang::all();
         return view ("pembelian.create", compact("user", "barang"));
     }

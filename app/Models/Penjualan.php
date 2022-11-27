@@ -12,7 +12,7 @@ class Penjualan extends Model
     protected $guarded = ["id"];
 
     public function Users(){
-        return $this->belongsTo(Users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function Detail_Penjualan(){
