@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\BarangController;
-use App\Http\Controllers\PenjualanController;
-use App\Http\Controllers\PembelianController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [Authcontroller::class, 'Customlogin'])->name("Login");
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::post('/logout', [AuthController::class, 'Logout']);
-
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/logout', [LoginController::class, 'Logout']);
 
     Route::get('/barang/list', [BarangController::class, 'index']);
     Route::post('/barang', [BarangController::class, 'store']);
@@ -42,3 +44,5 @@ Route::post('/logout', [AuthController::class, 'Logout']);
     Route::get('/pembelian/list', [PembelianController::class, 'index']);
     Route::get('/pembelian/{barang}/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
+
+    Route::get('/keluarmasuk/list', [KeluarMasukController::class, 'index']);

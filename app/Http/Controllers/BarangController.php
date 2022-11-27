@@ -30,6 +30,7 @@ class BarangController extends Controller
         ]);
         // dd($validated['gambar'] = $request->file('gambar')->store('gambar-barang'));
 
+        dd($validated);
         $validated['gambar'] = $request->file('gambar')->store('gambar-barang');
         Barang::create($validated);
 
