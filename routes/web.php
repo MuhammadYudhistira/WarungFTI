@@ -18,6 +18,9 @@ use App\Http\Controllers\PenjualanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -40,7 +43,7 @@ Route::middleware("auth")->group(function(){
     Route::post('/penjualan', [PenjualanController::class, 'store']);
 
     Route::get('/pembelian/list', [PembelianController::class, 'index']);
-    Route::get('/pembelian/create', [PembelianController::class, 'create']);
+    Route::get('/pembelian/{barang}/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
 
     Route::get('/keluarmasuk/list', [KeluarMasukController::class, 'index']);
