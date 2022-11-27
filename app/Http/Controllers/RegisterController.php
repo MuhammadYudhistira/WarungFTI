@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'username' => 'required',
             'no_hp' => 'required',
             'password' => 'required',
-            // 'role' => 'required'
+            'role' => 'required'
         ]);
 
         // dd($validated);
