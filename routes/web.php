@@ -42,4 +42,6 @@ Route::middleware("auth")->group(function(){
     Route::get('/pembelian/list', [PembelianController::class, 'index']);
     Route::get('/pembelian/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
+    
+    Route::get('/keluarmasuk/list', [KeluarMasukController::class, 'index']);
 });
