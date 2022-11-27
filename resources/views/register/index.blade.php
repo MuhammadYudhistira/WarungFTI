@@ -6,11 +6,11 @@
         <main class="form">
             <h1 class="h3 mb-3 fw-normal text-center">Registrasi akun</h1>
             <form action="/register" method="post">
-                @csrf
+              @csrf
               <div class="form-floating">
-                <input type="text" name="nama" class="form-control" id="nama" placeholder="nama">
-                <label for="nama ">Nama</label>
-                @error('nama')
+                <input type="text" name="name" class="form-control" id="name" placeholder="nama">
+                <label for="name ">Nama</label>
+                @error('name')
                   <div class="invalid-feedback">
                     {{  $message  }}
                   </div>
