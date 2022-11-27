@@ -40,5 +40,5 @@ Route::post('/logout', [AuthController::class, 'Logout']);
     Route::post('/penjualan', [PenjualanController::class, 'store']);
 
     Route::get('/pembelian/list', [PembelianController::class, 'index']);
-    Route::get('/pembelian/create', [PembelianController::class, 'create']);
+    Route::get('/pembelian/{barang}/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
