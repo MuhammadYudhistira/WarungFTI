@@ -1,4 +1,4 @@
-@extends("layout.template")
+@extends("layout.auth")
 @section('title', 'Login | WarungFTI')
 @section("content")
 <div class="row justify-content-center">
@@ -9,7 +9,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       @endif
-      
+
       @if (session()->has('loginError'))
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('loginError') }}

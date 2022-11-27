@@ -1,4 +1,4 @@
-@extends("layout.template")
+@extends("layout.auth")
 @section('title', 'Register | WarungFTI')
 @section("content")
 <div class="row justify-content-center">
@@ -8,9 +8,9 @@
             <form action="/register" method="post">
                 @csrf
               <div class="form-floating">
-                <input type="text" name="name" class="form-control" id="name" placeholder="nama">
-                <label for="name ">Nama</label>
-                @error('name')
+                <input type="text" name="nama" class="form-control" id="nama" placeholder="nama">
+                <label for="nama ">Nama</label>
+                @error('nama')
                   <div class="invalid-feedback">
                     {{  $message  }}
                   </div>
@@ -37,6 +37,8 @@
               <div class="form-floating mt-3">
                 <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                 <label for="passsword">Password</label>
+                <input name="role" class="form-control" value="2" hidden>
+
                 @error('password')
                   <div class="invalid-feedback">
                     {{  $message  }}
@@ -44,7 +46,7 @@
                 @enderror
               </div>
               <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Create account</button>
-            </form> 
+            </form>
             <small>Sudah punya akun? <a href="/login">Login</a></small>
           </main>
     </div>
