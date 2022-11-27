@@ -37,6 +37,11 @@
               <div class="form-floating mt-3">
                 <input type="password" name=password" class="form-control" id="password" placeholder="Password">
                 <label for="passsword">Password</label>
+                @error('password')
+                  <div class="invalid-feedback">
+                    {{  $message  }}
+                  </div>
+                @enderror
               </div>
               <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Create account</button>
             </form> 
