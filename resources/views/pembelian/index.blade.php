@@ -1,8 +1,8 @@
 @extends("layout.template")
-@section('title', 'List User')
+@section('title', 'List Transaksi Pembelian')
 @section("content")
 <h2 class="text-center mb-3">List Data Transaksi Pembelian</h2>
-<a href="/pembelian/create" class="btn btn-success mb-3">Tambah Pembelian</a>
+{{-- <a href="/pembelian/create" class="btn btn-success mb-3">Tambah Pembelian</a> --}}
 
 <table class="table  table-bordered border-dark table-hover">
     <thead>
@@ -20,11 +20,11 @@
         @foreach ($pembelian as $e)
         <tr>
             <td class="text-center">{{ $loop->iteration }}.</td>
-            <td>{{ $e->id_pembelian }}</td>
-            <td>{{ $e->id_barang }}</td>
-            <td>{{ $e->total_pembelian }}</td>
-            <td>{{ $e->jumlah_pembelian }}</td>
-            <td>{{ $e->tanggal_pembelian }}</td>
+            <td>{{ $e->id }}</td>
+            <td>{{ $e->barang_id}}</td>
+            <td>{{ $e->total}}</td>
+            <td>{{ $e->jumlah }}</td>
+            <td>{{ $e->tanggal}}</td>
         </tr>
         @endforeach
         @endif

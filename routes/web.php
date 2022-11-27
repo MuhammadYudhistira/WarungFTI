@@ -18,13 +18,15 @@ use App\Http\Controllers\PenjualanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'Logout']);
-
 
     Route::get('/barang/list', [BarangController::class, 'index']);
     Route::post('/barang', [BarangController::class, 'store']);
@@ -40,7 +42,7 @@ Route::post('/logout', [LoginController::class, 'Logout']);
     Route::post('/penjualan', [PenjualanController::class, 'store']);
 
     Route::get('/pembelian/list', [PembelianController::class, 'index']);
-    Route::get('/pembelian/create', [PembelianController::class, 'create']);
+    Route::get('/pembelian/{barang}/create', [PembelianController::class, 'create']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
 
     Route::get('/keluarmasuk/list', [KeluarMasukController::class, 'index']);
