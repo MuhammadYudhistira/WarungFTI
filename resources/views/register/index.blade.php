@@ -3,12 +3,12 @@
 @section("content")
 <div class="row justify-content-center">
     <div class="col-md-5">
-        <main class="form-registration">
+        <main class="form">
             <h1 class="h3 mb-3 fw-normal text-center">Registrasi akun</h1>
             <form action="/register" method="post">
                 @csrf
               <div class="form-floating">
-                <input type="text" name="name" class="form-control" id="nama" placeholder="nama">
+                <input type="text" name="name" class="form-control" id="name" placeholder="nama">
                 <label for="name ">Nama</label>
                 @error('name')
                   <div class="invalid-feedback">
@@ -35,7 +35,7 @@
                 @enderror
               </div>
               <div class="form-floating mt-3">
-                <input type="password" name=password" class="form-control" id="password" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                 <label for="passsword">Password</label>
                 @error('password')
                   <div class="invalid-feedback">
