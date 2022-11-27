@@ -25,7 +25,7 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'Logout']);
 
-
+Route::middleware("auth")->group(function(){
     Route::get('/barang/list', [BarangController::class, 'index']);
     Route::post('/barang', [BarangController::class, 'store']);
     Route::get('/barang/create', [BarangController::class, 'create']);
@@ -44,3 +44,4 @@ Route::post('/logout', [LoginController::class, 'Logout']);
     Route::post('/pembelian', [PembelianController::class, 'store']);
 
     Route::get('/keluarmasuk/list', [KeluarMasukController::class, 'index']);
+});
