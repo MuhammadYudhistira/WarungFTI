@@ -28,5 +28,4 @@ class LoginController extends Controller
         return back()->with('loginError', 'Login details are not valid');
     }
   
-
 }
