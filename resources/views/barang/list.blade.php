@@ -20,7 +20,7 @@
         @foreach ($barang as $b)
         <tr>
             <td class="text-center">{{ $loop->iteration }}.</td>
-            <td class="text-center"><img src="{{asset('storage/'. $b->gambar)}}" alt="" class="mb-3 col-sm-5 d-block" ></td>
+            <td class="text-center"><img style="width: 100px; height:100px; " src="{{asset('storage/'. $b->gambar)}}" alt="" class="mb-3 col-sm-5 d-block" ></td>
             <td class="text-center">{{ $b->nama }}</td>
             <td class="text-center">{{ $b->harga }}</td>
             <td class="text-center">{{ $b->stok }}</td>

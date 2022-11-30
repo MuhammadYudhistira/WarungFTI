@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\KeluarMasukController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/warung-fti', [CustomerController::class, 'index']);
+
+
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/logout', [LoginController::class, 'Logout']);
 
-Route::middleware("auth")->group(function(){
     Route::get('/barang/list', [BarangController::class, 'index']);
     Route::post('/barang', [BarangController::class, 'store']);
     Route::get('/barang/create', [BarangController::class, 'create']);
@@ -48,4 +51,3 @@ Route::middleware("auth")->group(function(){
     Route::post('/pembelian', [PembelianController::class, 'store']);
 
     Route::get('/keluarmasuk/list', [KeluarMasukController::class, 'index']);
-});
